@@ -162,7 +162,6 @@
 
  .filter-btn:hover {
      border-color: var(--accent);
-     transform: translateX(8px);
      box-shadow: 0 0 30px var(--accent-glow);
  }
 
