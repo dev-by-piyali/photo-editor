@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Filter Studio</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap">
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -17,8 +15,8 @@
             <h1>Photo Filter Studio</h1>
             <p>Transform your photos with cinematic filters</p>
         </div>
-        <div class="content">
 
+        <div class="content">
             <div class="controls-panel">
                 <button class="filter-btn" onclick="setFilter('brightness(1.5)', this)">
                     <span class="icon">☀️</span>
@@ -37,7 +35,7 @@
 
                 <button class="filter-btn" onclick="setFilter('grayscale(1)', this)">
                     <span class="icon">◐</span>
-                    <span>Grascale</span>
+                    <span>Grayscale</span>
                 </button>
 
                 <button class="filter-btn" onclick="setFilter('sepia(0.8)', this)">
@@ -49,9 +47,8 @@
                     <span class="icon">✨</span>
                     <span>Vivid</span>
                 </button>
-                <button class="reset-btn" onclick="resetFilter()">
-                    Reset to Original
-                </button>
+
+                <button class="reset-btn" onclick="resetFilter()">Reset to Original</button>
             </div>
 
             <div class="image-showcase">
@@ -59,7 +56,31 @@
                     <img id="photo"
                         src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
                         alt="Photo to edit">
+                    <span class="file-name-section">
+                        <span class="file-name" id="fileName">Default image</span>
+                        <button class="remove-btn" id="removeBtn" onclick="removeImage()" title="Remove uploaded image">
+                            ✕
+                        </button>
+                    </span>
                 </div>
+
+                <div class="action-btn">
+                    <!-- Image Upload Section -->
+                    <div class="upload-section">
+                        <label class="upload-btn" for="imageInput">
+                            <span class="icon">📁</span>
+                            <span>Change Image</span>
+                        </label>
+                        <input type="file" id="imageInput" accept="image/*" onchange="loadImage(event)" />
+                    </div>
+
+                    <button class="download-btn" onclick="downloadImage()">
+                        <span class="icon">⬇️</span>
+                        <span>Download Image</span>
+                    </button>
+                </div>
+
+
             </div>
         </div>
     </div>

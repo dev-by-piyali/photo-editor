@@ -12,6 +12,17 @@ A sleek, modern image filter application with a premium cinematic aesthetic. Tra
   - **Sepia** - Vintage warm tones
   - **Vivid** - High contrast with enhanced brightness
 
+- **Image Management**
+  - Upload custom images from your device
+  - Default sample image included
+  - Remove uploaded images to revert to default
+  - Real-time file name display
+
+- **Export Functionality**
+  - Download filtered images as PNG
+  - Automatic timestamp-based file naming
+  - Preserves applied filters in exported image
+
 - **Premium UI/UX**
   - Glass-morphism design with backdrop blur
   - Smooth CSS animations and transitions
@@ -25,7 +36,7 @@ A sleek, modern image filter application with a premium cinematic aesthetic. Tra
 ## File Structure
 
 ```
-image-editor/
+photo-editor/
 ├── index.html      # Main HTML structure
 ├── style.css       # Styling and animations
 ├── script.js       # Filter logic and interactions
@@ -39,7 +50,7 @@ image-editor/
 ### Quick Start
 
 1. Clone or download the project files
-3. Open `index.html` in any modern web browser
+2. Open `index.html` in any modern web browser
 
 ```bash
 # If using a local server (recommended)
@@ -48,9 +59,12 @@ npx serve .
 
 ### Usage
 
-1. Click any filter button to apply the effect
-2. The active filter will be highlighted with the accent color
-3. Click **"Reset to Original"** to remove all filters
+1. **Apply Filters**: Click any filter button to apply the effect
+2. **Active Filter**: The active filter will be highlighted with the accent color
+3. **Upload Image**: Click "Change Image" to upload your own photo
+4. **Remove Image**: Click the ✕ button to remove your uploaded image and revert to default
+5. **Download**: Click "Download Image" to save your filtered image as PNG
+6. **Reset**: Click "Reset to Original" to remove all filters
 
 ---
 
@@ -77,8 +91,8 @@ Edit the CSS variables in `:root` to customize the color scheme:
 
 The application automatically adapts to different screen sizes:
 
-- **Desktop** (> 768px): Side-by-side layout
-- **Mobile** (≤ 768px): Stacked vertical layout
+- **Desktop** (> 768px): Side-by-side layout with controls and image preview
+- **Mobile** (≤ 768px): Stacked vertical layout optimized for touch interaction
 
 ---
 
@@ -89,6 +103,14 @@ The application automatically adapts to different screen sizes:
 - **Google Fonts**: DM Sans
 - No JavaScript frameworks required
 - Pure CSS animations
+- Vanilla JavaScript for all functionality
+
+### Key Features
+
+- **File Validation**: Only image files can be uploaded
+- **Error Handling**: Graceful fallbacks for image loading failures
+- **Canvas API**: Used for applying filters during image download
+- **FileReader API**: Handles custom image uploads
 
 <p align="center">
   Built with ❤️ using vanilla HTML, CSS & JavaScript

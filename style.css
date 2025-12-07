@@ -75,7 +75,7 @@
      align-items: center;
      gap: 40px;
      padding: 40px;
-     max-width: 1000px;
+     width: 100%;
      animation: fadeIn 0.8s ease-out;
  }
 
@@ -188,11 +188,142 @@
      opacity: 0.7;
  }
 
- .image-showcase {
-     flex: 1;
+ /* Upload Section */
+ .upload-section {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+ }
+
+ .upload-btn {
+     position: relative;
+     padding: 12px 20px;
+     background: var(--glass);
+     border: 1px solid var(--glass-border);
+     border-radius: 12px;
+     color: var(--text-primary);
+     font-family: 'DM Sans', sans-serif;
+     font-size: 0.95rem;
+     cursor: pointer;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     text-align: center;
      display: flex;
      align-items: center;
      justify-content: center;
+     gap: 10px;
+ }
+
+ .upload-btn:hover {
+     border-color: var(--text-secondary);
+ }
+
+ .upload-btn .icon {
+     font-size: 1.1rem;
+ }
+
+ #imageInput {
+     display: none;
+ }
+
+ .file-name-section {
+     display: flex;
+     margin-top: 20px;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .file-name {
+     font-size: 0.75rem;
+     color: var(--text-secondary);
+     text-align: center;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     padding: 0 8px;
+ }
+
+ /* Download Button */
+ .download-btn {
+     position: relative;
+     padding: 12px 20px;
+     background: var(--glass);
+     border: 1px solid var(--glass-border);
+     border-radius: 12px;
+     color: var(--text-primary);
+     font-family: 'DM Sans', sans-serif;
+     font-size: 0.95rem;
+     cursor: pointer;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+ }
+
+ .download-btn:hover {
+     border-color: var(--text-secondary);
+ }
+
+ .download-btn:disabled {
+     opacity: 0.5;
+     cursor: not-allowed;
+     transform: none;
+     box-shadow: none;
+ }
+
+ .download-btn .icon {
+     font-size: 1rem;
+ }
+
+ .upload-row {
+     display: flex;
+     gap: 8px;
+     align-items: stretch;
+ }
+
+ .upload-row .upload-btn {
+     flex: 1;
+ }
+
+ /* Remove Button */
+ .remove-btn {
+     width: 44px;
+     min-width: 44px;
+     background: var(--glass);
+     border: 1px solid var(--glass-border);
+     border-radius: 12px;
+     color: var(--text-secondary);
+     font-size: 1.1rem;
+     cursor: pointer;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .remove-btn:hover {
+     background: rgba(239, 68, 68, 0.2);
+     border-color: #ef4444;
+     color: #ef4444;
+     transform: scale(1.05);
+ }
+
+ .remove-btn:disabled {
+     display: none;
+ }
+
+ .remove-btn:disabled:hover {
+     background: var(--glass);
+     border-color: var(--glass-border);
+     color: var(--text-secondary);
+ }
+
+ .image-showcase {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: end;
      animation: slideIn 0.6s ease-out 0.4s both;
  }
 
@@ -222,6 +353,8 @@
  #photo {
      display: block;
      max-width: 400px;
+     max-height: 300px;
+     aspect-ratio: auto;
      width: 100%;
      height: auto;
      border-radius: 12px;
@@ -247,10 +380,16 @@
      border-color: var(--text-secondary);
  }
 
+ .action-btn {
+     display: flex;
+     gap: 20px;
+     margin-top: 20px;
+ }
+
  /* Responsive */
  @media (max-width: 768px) {
      .app-container {
-         padding: 16px;
+         padding: 20px;
          height: 100dvh;
          gap: 10px;
          overflow-y: auto;
@@ -264,14 +403,22 @@
      .controls-panel {
          width: 100%;
          max-width: 400px;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
      }
 
      .reset-btn {
          margin-top: 0;
+         grid-column: 1 / 3;
      }
 
      .image-frame {
          bottom: 0;
+     }
+
+     .action-btn {
+         flex-direction: column;
+         width: 100%;
      }
 
      #photo {
