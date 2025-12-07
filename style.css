@@ -1,0 +1,280 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ :root {
+     --bg-primary: #0a0a0f;
+     --bg-secondary: #12121a;
+     --accent: #ff6b35;
+     --accent-glow: rgba(255, 107, 53, 0.3);
+     --text-primary: #f5f5f7;
+     --text-secondary: #8a8a8e;
+     --glass: rgba(255, 255, 255, 0.03);
+     --glass-border: rgba(255, 255, 255, 0.08);
+ }
+
+ body {
+     font-family: 'DM Sans', sans-serif;
+     background: var(--bg-primary);
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+     position: relative;
+ }
+
+ /* Atmospheric Background */
+ body::before {
+     content: '';
+     position: fixed;
+     top: -50%;
+     left: -50%;
+     width: 200%;
+     height: 200%;
+     background:
+         radial-gradient(ellipse at 20% 20%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+         radial-gradient(ellipse at 80% 80%, rgba(120, 80, 200, 0.06) 0%, transparent 50%),
+         radial-gradient(ellipse at 50% 50%, rgba(40, 40, 60, 0.5) 0%, transparent 70%);
+     animation: ambientMove 20s ease-in-out infinite;
+     z-index: -1;
+ }
+
+ @keyframes ambientMove {
+
+     0%,
+     100% {
+         transform: translate(0, 0) rotate(0deg);
+     }
+
+     33% {
+         transform: translate(-2%, -1%) rotate(1deg);
+     }
+
+     66% {
+         transform: translate(1%, 2%) rotate(-1deg);
+     }
+ }
+
+ /* Grain Overlay */
+ body::after {
+     content: '';
+     position: fixed;
+     inset: 0;
+     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+     opacity: 0.03;
+     pointer-events: none;
+     z-index: 100;
+ }
+
+ .app-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 40px;
+     padding: 40px;
+     max-width: 1000px;
+     animation: fadeIn 0.8s ease-out;
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(20px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .controls-panel {
+     width: 220px;
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+     animation: slideIn 0.6s ease-out 0.2s both;
+ }
+
+ @keyframes slideIn {
+     from {
+         opacity: 0;
+         transform: translateX(-30px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ .panel-header {
+     margin-bottom: 20px;
+ }
+
+ .panel-header h1 {
+     font-family: 'DM Sans', serif;
+     font-size: 1.8rem;
+     font-weight: 600;
+     color: var(--text-primary);
+     letter-spacing: -0.02em;
+     text-align: center;
+ }
+
+ .panel-header p {
+     font-size: 0.85rem;
+     color: var(--text-secondary);
+     margin-top: 8px;
+ }
+
+ .content {
+     display: flex;
+     gap: 40px;
+ }
+
+ .filter-btn {
+     position: relative;
+     padding: 16px 20px;
+     background: var(--glass);
+     border: 1px solid var(--glass-border);
+     border-radius: 12px;
+     color: var(--text-primary);
+     font-family: 'DM Sans', sans-serif;
+     font-size: 0.95rem;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     text-align: left;
+     overflow: hidden;
+ }
+
+ .filter-btn::before {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(135deg, var(--accent) 0%, #ff8c42 100%);
+     opacity: 0;
+     transition: opacity 0.3s ease;
+ }
+
+ .filter-btn:hover {
+     border-color: var(--accent);
+     transform: translateX(8px);
+     box-shadow: 0 0 30px var(--accent-glow);
+ }
+
+ .filter-btn:hover::before {
+     opacity: 0.1;
+ }
+
+ .filter-btn.active {
+     background: linear-gradient(135deg, var(--accent) 0%, #ff8c42 100%);
+     border-color: transparent;
+     box-shadow: 0 8px 32px var(--accent-glow);
+ }
+
+ .filter-btn span {
+     position: relative;
+     z-index: 1;
+ }
+
+ .filter-btn .icon {
+     display: inline-block;
+     width: 20px;
+     margin-right: 10px;
+     opacity: 0.7;
+ }
+
+ .image-showcase {
+     flex: 1;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     animation: slideIn 0.6s ease-out 0.4s both;
+ }
+
+ .image-frame {
+     position: relative;
+     bottom: 30px;
+     padding: 16px;
+     background: var(--glass);
+     border: 1px solid var(--glass-border);
+     border-radius: 20px;
+     backdrop-filter: blur(20px);
+     box-shadow:
+         0 32px 64px rgba(0, 0, 0, 0.4),
+         inset 0 1px 0 rgba(255, 255, 255, 0.05);
+ }
+
+ .image-frame::before {
+     content: '';
+     position: absolute;
+     top: -1px;
+     left: 20%;
+     right: 20%;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+ }
+
+ #photo {
+     display: block;
+     max-width: 400px;
+     width: 100%;
+     height: auto;
+     border-radius: 12px;
+     filter: brightness(1);
+     transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .reset-btn {
+     margin-top: 20px;
+     padding: 12px 20px;
+     background: transparent;
+     border: 1px solid var(--glass-border);
+     border-radius: 10px;
+     color: var(--text-secondary);
+     font-family: 'DM Sans', sans-serif;
+     font-size: 0.85rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .reset-btn:hover {
+     color: var(--text-primary);
+     border-color: var(--text-secondary);
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+     .app-container {
+         padding: 16px;
+         height: 100dvh;
+         gap: 10px;
+         overflow-y: auto;
+     }
+
+     .content {
+         flex-direction: column;
+         gap: 20px;
+     }
+
+     .controls-panel {
+         width: 100%;
+         max-width: 400px;
+     }
+
+     .reset-btn {
+         margin-top: 0;
+     }
+
+     .image-frame {
+         bottom: 0;
+     }
+
+     #photo {
+         max-width: 100%;
+     }
+ }
