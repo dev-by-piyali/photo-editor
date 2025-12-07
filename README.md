@@ -1,6 +1,6 @@
 # Photo Filter Studio
 
-A sleek, modern image filter application with a premium cinematic aesthetic. Transform your photos with beautiful CSS filters through an elegant glass-morphism interface.
+It lets you transform your photos with beautiful CSS filters through an elegant glass-morphism interface. Upload any image, apply effects, and download the edited result with one click!
 
 ## Features
 
@@ -32,6 +32,16 @@ A sleek, modern image filter application with a premium cinematic aesthetic. Tra
   - Subtle film grain texture overlay
 
 ---
+
+## App Preview
+
+Here's a quick look at the Photo Editor:
+
+### Desktop View
+<img src="assets/photo-editor-desktop.png" width="800" alt="Desktop preview of Photo Filter Studio">
+
+### Mobile View
+<img src="assets/photo-editor.gif" width="320" alt="Mobile demo of Photo Filter Studio">
 
 ## File Structure
 
