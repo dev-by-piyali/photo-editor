@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Filter Studio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="panel-header">
+            <h1>Photo Filter Studio</h1>
+            <p>Transform your photos with cinematic filters</p>
+        </div>
+        <div class="content">
+
+            <div class="controls-panel">
+                <button class="filter-btn" onclick="setFilter('brightness(1.5)', this)">
+                    <span class="icon">☀️</span>
+                    <span>Brightness</span>
+                </button>
+
+                <button class="filter-btn" onclick="setFilter('saturate(2)', this)">
+                    <span class="icon">🎨</span>
+                    <span>Saturation</span>
+                </button>
+
+                <button class="filter-btn" onclick="setFilter('invert(1)', this)">
+                    <span class="icon">🔄</span>
+                    <span>Inversion</span>
+                </button>
+
+                <button class="filter-btn" onclick="setFilter('grayscale(1)', this)">
+                    <span class="icon">◐</span>
+                    <span>Grascale</span>
+                </button>
+
+                <button class="filter-btn" onclick="setFilter('sepia(0.8)', this)">
+                    <span class="icon">📜</span>
+                    <span>Sepia</span>
+                </button>
+
+                <button class="filter-btn" onclick="setFilter('contrast(1.5) brightness(1.1)', this)">
+                    <span class="icon">✨</span>
+                    <span>Vivid</span>
+                </button>
+                <button class="reset-btn" onclick="resetFilter()">
+                    Reset to Original
+                </button>
+            </div>
+
+            <div class="image-showcase">
+                <div class="image-frame">
+                    <img id="photo"
+                        src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                        alt="Photo to edit">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

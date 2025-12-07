@@ -1,1 +1,95 @@
-# photo-editor
+# Photo Filter Studio
+
+A sleek, modern image filter application with a premium cinematic aesthetic. Transform your photos with beautiful CSS filters through an elegant glass-morphism interface.
+
+## Features
+
+- **6 Professional Filters**
+  - **Brightness** - Enhance image luminosity
+  - **Saturation** - Boost color vibrancy
+  - **Inversion** - Create negative effects
+  - **Grayscale** - Classic black & white
+  - **Sepia** - Vintage warm tones
+  - **Vivid** - High contrast with enhanced brightness
+
+- **Premium UI/UX**
+  - Glass-morphism design with backdrop blur
+  - Smooth CSS animations and transitions
+  - Active state highlighting
+  - Responsive layout for all devices
+  - Atmospheric animated background
+  - Subtle film grain texture overlay
+
+---
+
+## File Structure
+
+```
+image-editor/
+├── index.html      # Main HTML structure
+├── style.css       # Styling and animations
+├── script.js       # Filter logic and interactions
+└── README.md       # This file
+```
+
+---
+
+## Getting Started
+
+### Quick Start
+
+1. Clone or download the project files
+3. Open `index.html` in any modern web browser
+
+```bash
+# If using a local server (recommended)
+npx serve .
+```
+
+### Usage
+
+1. Click any filter button to apply the effect
+2. The active filter will be highlighted with the accent color
+3. Click **"Reset to Original"** to remove all filters
+
+---
+
+## Customization
+
+### Changing Colors
+
+Edit the CSS variables in `:root` to customize the color scheme:
+
+```css
+:root {
+    --bg-primary: #0a0a0f;           /* Main background */
+    --bg-secondary: #12121a;         /* Secondary background */
+    --accent: #ff6b35;               /* Accent color (buttons, highlights) */
+    --accent-glow: rgba(255, 107, 53, 0.3);  /* Glow effect */
+    --text-primary: #f5f5f7;         /* Primary text */
+    --text-secondary: #8a8a8e;       /* Secondary text */
+    --glass: rgba(255, 255, 255, 0.03);      /* Glass effect */
+    --glass-border: rgba(255, 255, 255, 0.08); /* Glass borders */
+}
+```
+
+## Responsive Design
+
+The application automatically adapts to different screen sizes:
+
+- **Desktop** (> 768px): Side-by-side layout
+- **Mobile** (≤ 768px): Stacked vertical layout
+
+---
+
+## Technical Details
+
+### Dependencies
+
+- **Google Fonts**: DM Sans
+- No JavaScript frameworks required
+- Pure CSS animations
+
+<p align="center">
+  Built with ❤️ using vanilla HTML, CSS & JavaScript
+</p>
