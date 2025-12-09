@@ -101,7 +101,7 @@ function removeImage() {
   imageInput.value = ''
 
   // Update file name display
-  fileName.textContent = 'Default image loaded'
+  fileName.textContent = 'Default image'
   fileName.title = ''
 
   // Reset filter and update button states
