@@ -2,6 +2,19 @@
 
 It lets you transform your photos with beautiful CSS filters through an elegant glass-morphism interface. Upload any image, apply effects, and download the edited result with one click!
 
+
+## App Preview
+
+Here's a quick look at the Photo Editor:
+
+### Desktop View
+
+https://github.com/user-attachments/assets/7e33f32b-dc87-49a5-b445-ef7592990648
+
+### Mobile View
+
+<img width="320" alt="photo-editor-mobile" src="https://github.com/user-attachments/assets/da23d183-4fc0-42e4-9e47-11e8979f54ee" />
+
 ## Features
 
 - **6 Professional Filters**
@@ -32,16 +45,6 @@ It lets you transform your photos with beautiful CSS filters through an elegant 
   - Subtle film grain texture overlay
 
 ---
-
-## App Preview
-
-Here's a quick look at the Photo Editor:
-
-### Desktop View
-<img src="assets/photo-editor-desktop.png" width="800" alt="Desktop preview of Photo Filter Studio">
-
-### Mobile View
-<img src="assets/photo-editor.gif" width="320" alt="Mobile demo of Photo Filter Studio">
 
 ## File Structure
 
